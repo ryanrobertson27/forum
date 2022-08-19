@@ -18,19 +18,19 @@
         <div class="posts">
         </div>
   
-        <form class='mt-5' onsubmit="event.preventDefault();">
+        <form class='mt-5' onsubmit="event.preventDefault() & newPost(this)">
           <h3>Add a new post</h3>
           
           <div class="form-group my-2">
             <input id="name" type="text"
               class="form-control"
-              placeholder="Name"></input>
+              placeholder="Name" required></input>
           </div>
           
           <div class="form-group my-2">
             <textarea id="message" type="text"
             class="form-control"
-            placeholder="Message"></textarea>
+            placeholder="Message" required></textarea>
           </div>
           
           <button id="submit" class="btn btn-primary">Post</button>
@@ -39,7 +39,7 @@
         <!-- prototyping post layout -->
         <div class='container border rounded'>
           <div class='row mt-2'>
-            <p class='my-0 col-11'>To nest Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem maxime voluptatum corporis quam veritatis quia eaque provident labore, ex consequatur sapiente asperiores esse, dolorum at aliquid repellat cum odit quasi?</p>
+            <p class='my-0 col-11'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem maxime voluptatum corporis quam veritatis quia eaque provident labore, ex consequatur sapiente asperiores esse, dolorum at aliquid repellat cum odit quasi?</p>
             <button type='button' class='btn btn-close col-1'></button>
           </div>
           <div class='row my-3 pt-3 border-top align-items-center'>
