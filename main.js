@@ -1,9 +1,8 @@
 // your code here
 
 const postDiv = document.querySelector('.posts')
-const postSubmit = document.querySelector('#submit');
 
-let postCount = 0;
+
 
 let newPost = function(e) {
   // values of user inputed name and message
