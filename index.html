@@ -1,40 +1,63 @@
 <html>
 <head>
   <title>Forum</title>
-  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
-<body>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+<body class='body-bg'>
+  <div class=container>
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+  
+        <div class="page-header">
+          <h1>Forum</h1>
+        </div>
+  
+          <hr>
 
-      <div class="page-header">
-        <h1>Forum</h1>
-      </div>
-
-      <div class="posts">
-      </div>
-
-      <form style="margin-top:30px;" onsubmit="event.preventDefault();">
-        <h3>Add a new post</h3>
-        
-        <div class="form-group">
-          <input id="name" type="text"
+        <div class="posts">
+        </div>
+  
+        <form class='mt-5' onsubmit="event.preventDefault();">
+          <h3>Add a new post</h3>
+          
+          <div class="form-group my-2">
+            <input id="name" type="text"
+              class="form-control"
+              placeholder="Name"></input>
+          </div>
+          
+          <div class="form-group my-2">
+            <textarea id="message" type="text"
             class="form-control"
-            placeholder="Name"></input>
-        </div>
-        
-        <div class="form-group">
-          <textarea id="message" type="text"
-          class="form-control"
-          placeholder="Message"></textarea>
-        </div>
-        
-        <button id="submit" class="btn btn-primary">Post</button>
-      </form>
+            placeholder="Message"></textarea>
+          </div>
+          
+          <button id="submit" class="btn btn-primary">Post</button>
+        </form>
 
+        <!-- prototyping post layout -->
+        <div class='container border rounded'>
+          <div class='row mt-2'>
+            <p class='my-0 col-11'>To nest Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem maxime voluptatum corporis quam veritatis quia eaque provident labore, ex consequatur sapiente asperiores esse, dolorum at aliquid repellat cum odit quasi?</p>
+            <button type='button' class='btn btn-close col-1'></button>
+          </div>
+          <div class='row my-3 pt-3 border-top align-items-center'>
+            <p class='my-0 col-8'>Posted By: <strong>Ryan</strong></p>
+            <i class="bi bi-hand-thumbs-up col-1"></i>
+            <p class='my-0 col-1'>0</p>
+            <i class="bi bi-hand-thumbs-down col-1"></i>
+            <p class='my-0 col-1'>0</p>
+          </div>
+          <div class='row'>
+            <p class='col text-black-50 text-opacity-50'>11:45PM</p>
+          </div>
+
+        </div> 
+      </div>
     </div>
   </div>
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   <script src="main.js"></script>
 </body>
 </html>
