@@ -1,11 +1,11 @@
 // your code here
 
-let likesDislikesObj = {}
 
+let likesDislikesObj = {} //keeps track of likes and dislikes of individual posts
 
 
 const postDiv = document.querySelector('.posts')
-let postCounter = 0;
+let postCounter = 0; //used to generate post ID's
 
 
 
@@ -16,7 +16,7 @@ let newPost = function(e) {
   
   //creating wrapper div for new posts
   const newPostDiv = document.createElement('div')
-  newPostDiv.classList.add('container', 'border', 'rounded', 'my-3')
+  newPostDiv.classList.add('container', 'border', 'rounded', 'my-3', 'user-post')
   newPostDiv.setAttribute('id', `post-${postCounter + 1}`)
   postDiv.appendChild(newPostDiv)
   
@@ -89,7 +89,8 @@ let newPost = function(e) {
   e.reset() 
 }
 
-
+//function to create post Object each time a post is created.  That object stores the likes and
+//dislikes of that specific post
 let createPostObject = function(id) {
   likesDislikesObj[id] = {likes: 0, dislikes: 0}
 }
@@ -116,21 +117,36 @@ document.addEventListener('click', function(e){
   if(e.target && e.target.classList.contains('delete-post')){
     postid = e.target.parentNode.parentNode
     postid.remove()
-    // delete likesDislikesObj[postid.id] 
   }
   if(e.target && e.target.classList.contains('bi-hand-thumbs-up')) {
     let postid = e.target.parentNode.parentNode.id
     likesDislikesObj[postid].likes += 1;
     let likesNumber = e.target.parentNode.querySelector('.like-count');
     likesNumber.innerHTML = likesDislikesObj[postid].likes;
+    e.target.classList.add('text-success')
+    likesNumber.classList.add('text-success')
+
+
+    //Sorts posts by number of likes. Uses the textContext of each like-count text
+    let userPosts = [...document.querySelectorAll('.user-post')]
+    if(userPosts.length > 1){
+      userPosts.sort((a,b) => {
+        let likesOfA = a.querySelector('.like-count').textContent;
+        let likesOfB = b.querySelector('.like-count').textContent;
+        return likesOfB - likesOfA;
+      }).forEach(e => {
+        e.remove();
+        postDiv.appendChild(e)
+      })
+    }
   }
   if(e.target && e.target.classList.contains('bi-hand-thumbs-down')) {
     let postid = e.target.parentNode.parentNode.id
     likesDislikesObj[postid].dislikes += 1;
     let dislikesNumber = e.target.parentNode.querySelector('.dislike-count');
     dislikesNumber.innerHTML = likesDislikesObj[postid].dislikes;
+    e.target.classList.add('text-danger')
+    dislikesNumber.classList.add('text-danger')
   }
 })
-
-
 
