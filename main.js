@@ -1,14 +1,11 @@
 import { faker } from 'https://cdn.skypack.dev/@faker-js/faker'; //https://fakerjs.dev/api/image.html
 
 
-
-
-//keeps track of likes and dislikes of individual posts
-let likesDislikesObj = {} 
+let likesDislikesObj = {} //keeps track of likes and dislikes of individual posts
+let postCounter = 0; //used to generate post ID's
 
 
 const postDiv = document.querySelector('.posts')
-let postCounter = 0; //used to generate post ID's
 
 
 /*due to html seeing this as a module, newPost doesn't have 
